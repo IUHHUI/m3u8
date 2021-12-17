@@ -24,6 +24,7 @@ func main() {
 	flag.Parse()
 	defer func() {
 		if r := recover(); r != nil {
+			flag.Usage()
 			fmt.Println("[error]", r)
 			os.Exit(-1)
 		}
